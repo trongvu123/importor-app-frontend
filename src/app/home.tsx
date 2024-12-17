@@ -365,7 +365,7 @@ export default function HomePage() {
                                                 <FormControl>
                                                     <Input
                                                         placeholder="Nhập số câu"
-                                                        disabled={switchChange || files === null}
+                                                        disabled={switchChange || files === null || dataUpload.length === 0}
                                                         type=""
                                                         {...field} />
                                                 </FormControl>
@@ -384,7 +384,7 @@ export default function HomePage() {
                                                 <FormControl>
                                                     <Input
                                                         placeholder="Nhập số câu"
-                                                        disabled={switchChange || files === null}
+                                                        disabled={switchChange || files === null || dataUpload.length === 0}
                                                         type=""
 
                                                         {...field} />
@@ -411,7 +411,7 @@ export default function HomePage() {
                                                     checked={field.value}
                                                     onCheckedChange={field.onChange}
                                                     aria-readonly
-                                                    disabled={files === null}
+                                                    disabled={files === null || dataUpload.length === 0}
                                                 />
                                             </FormControl>
                                         </FormItem>
@@ -419,7 +419,7 @@ export default function HomePage() {
                                 />
                                 {/* <Button type="submit" className='float-right'>Submit</Button> */}
                             </form>
-                            <Button disabled={files === null} type="submit" form='form' onClick={form.handleSubmit(onSubmit)}>Lấy danh sách</Button>
+                            <Button disabled={files === null || dataUpload.length === 0} type="submit" form='form' onClick={form.handleSubmit(onSubmit)}>Lấy danh sách</Button>
                         </Form>
                     </div>
                     {/* <DialogFooter>
